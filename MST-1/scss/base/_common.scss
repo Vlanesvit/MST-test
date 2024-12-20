@@ -1,0 +1,142 @@
+// Text ========================================================================================================================================================
+h1 {
+	font-family: "Prata", sans-serif;
+	font-weight: 400;
+	font-size: clamp(30px, 8vw, 80px);
+	// line-height: 96px;
+	line-height: 120%;
+}
+
+h2 {
+	font-family: "Prata", sans-serif;
+	font-weight: 400;
+	font-size: clamp(20px, 3vw, 54px);
+	// line-height: 59px;
+	line-height: 110%;
+}
+
+h3 {
+	font-weight: 400;
+	font-size: clamp(16px, 3vw, 50px);
+	// line-height: 60px;
+	line-height: 120%;
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+p {
+}
+
+.menu {
+	ul {
+		li {
+			a {
+				span {
+					position: relative;
+
+					&::after {
+						content: "";
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						width: 0%;
+						height: 1px;
+						background-color: #fff;
+						transition: width 0.3s ease 0s;
+					}
+				}
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					& > a {
+						span {
+							&::after {
+								width: 100%;
+								left: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Button ========================================================================================================================================================
+.btn {
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	z-index: 10;
+	text-transform: uppercase;
+	padding: clamp(12px, 3vw, 23px);
+	font-weight: 700;
+	font-size: clamp(16px, 3vw, 20px);
+	// line-height: 30px;
+	line-height: 150%;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	border-radius: 4px;
+	transition: all 0.3s ease 0s;
+
+	&._btn-white {
+		color: #222;
+		background: #fff;
+		border: 1px solid #fff;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: transparent;
+				color: #fff;
+			}
+		}
+	}
+
+	&._btn-dark {
+		color: #fff;
+		background: #282829;
+		border: 1px solid #282829;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: transparent;
+				color: #282829;
+			}
+		}
+	}
+}
+
+.input {
+	outline: none;
+	width: 100%;
+	transition: 0.3s ease 0s;
+	transition-property: background-color, border-color;
+	border: 2px solid #d6d6d6;
+	border-radius: 4px;
+	padding: clamp(12px, 3vw, 13px) clamp(16px, 3vw, 20px) clamp(12px, 3vw, 13px) clamp(16px, 3vw, 38px);
+	font-weight: 400;
+	font-size: clamp(14px, 2vw, 24px);
+	// line-height: 36px;
+	line-height: 150%;
+	color: #55565a;
+
+	&:focus {
+		border-color: #a0a0a0;
+	}
+
+	&::placeholder {
+		color: rgba($color: #55565a, $alpha: 0.7);
+	}
+}
